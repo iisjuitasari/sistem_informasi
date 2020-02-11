@@ -215,14 +215,14 @@
           </li>
           <li class="nav-item">
             <a href="../widgets.html" class="nav-link">
-              <i class="fas fa-users"></i>
+              <i class="fas fa-truck"></i>
               <p>
-                Customers
+                Customer
               </p>
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="customer" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Product

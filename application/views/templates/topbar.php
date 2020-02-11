@@ -28,10 +28,13 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-         <li><a href="<?=base_url('dashboard')?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-         <li><a href="<?=base_url('supplier')?>"><i class="fa fa-truck"></i> <span>Supliers</span></a></li>
-         <li><a href="https://adminlte.io/docs"><i class="fa fa-users"></i> <span>Customers</span></a></li>
-        <li class="treeview">
+        <li <?=$this->uri->segment(1) == 'dashboard' || $this->uri->segment(1) == '' ? 'class="active"' : ''?>>
+         <a href="<?=base_url('dashboard')?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+         <li <?=$this->uri->segment(1) == 'supplier' ? 'class="active"' : ''?>>
+          <a href="<?=base_url('supplier')?>"><i class="fa fa-truck"></i> <span>Supliers</span></a></li>
+         <li <?=$this->uri->segment(1) == 'customer' ? 'class="active"' : ''?>>
+          <a href="<?=base_url('customer')?>"><i class="fa fa-users"></i> <span>Customers</span></a></li>
+        <li class="treeview <?=$this->uri->segment(1) == 'category' || $this->uri->segment(1) == 'unit' ? 'active' : ''?>">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Product</span>
@@ -40,9 +43,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Categories</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Units</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Items</a></li> 
+            <li <?=$this->uri->segment(1) == 'category' ? 'class="active"' : ''?>>
+              <a href="<?=base_url('category')?>"><i class="fa fa-circle-o"></i> Categories</a></li>
+            <li <?=$this->uri->segment(1) == 'unit' ? 'class="active"' : ''?>>
+              <a href="<?=base_url('unit')?>"><i class="fa fa-circle-o"></i> Units</a></li>
+            <li><a href="<?=base_url('dashboard')?>"><i class="fa fa-circle-o"></i> Items</a></li> 
           </ul>
         </li>
         <li class="treeview">

@@ -32,7 +32,7 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|callback_username_check');
 		$this->form_validation->set_rules('password', 'Password', 'min_length[5]');
 		$this->form_validation->set_rules('passconf', 'Konfirmasi Password', 'matches[password]',
-			array('matches' => '%s tidak sesuai dengan password')
+				array('matches' => '%s tidak sesuai dengan password')
 		);
 
 		$this->form_validation->set_rules('level', 'Level', 'required');
@@ -44,11 +44,7 @@ class User extends CI_Controller {
 		$this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('templates/header');
-			$this->load->view('templates/sidebar');
-			$this->load->view('templates/topbar');
 			$this->load->view('user/user_form_add');
-			$this->load->view('templates/footer');
 		} else {
 			$post = $this->input->post(null, TRUE);
 			$this->user_m->add($post);
@@ -67,12 +63,12 @@ class User extends CI_Controller {
 		if($this->input->post('password')) {
 			$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
 			$this->form_validation->set_rules('passconf', 'Konfirmasi Password', 'required|matches[password]',
-				array('matches' => '%s tidak sesuai dengan password')
+					array('matches' => '%s tidak sesuai dengan password')
 			);
 		}
 		if($this->input->post('passconf')) {
 			$this->form_validation->set_rules('passconf', 'Konfirmasi Password', 'required|matches[password]',
-				array('matches' => '%s tidak sesuai dengan password')
+					array('matches' => '%s tidak sesuai dengan password')
 			);
 		}
 		$this->form_validation->set_rules('level', 'Level', 'required');

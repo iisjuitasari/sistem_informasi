@@ -224,5 +224,15 @@
 <script src="<?php echo base_url()?>assets/AdminLTE2/dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url()?>assets/AdminLTE2/dist/js/demo.js"></script>
+
+
+<script src="<?=base_url()?>assets/AdminLTE2/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?=base_url()?>assets/AdminLTE2/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('#table1').DataTable()
+  })
+</script>
 </body>
 </html>

@@ -28,27 +28,27 @@
 					<form action="" method="post">
 						<div class="form-group <?=form_error('fullname') ? 'has-error' : null ?>">
 							<label>Name *</label>
-							<input type="text" name="fullname" class="form-control">
+							<input type="text" name="fullname" value="<?=set_value('fullname')?>" class="form-control">
 							<?=form_error('fullname')?>
 						</div>
 						<div class="form-group <?=form_error('username') ? 'has-error' : null?>">
 							<label>Username *</label>
-							<input type="text" name="username" class="form-control">
+							<input type="text" name="username" value="<?=set_value('username')?>" class="form-control">
 							<?=form_error('username')?>
 						</div>
 						<div class="form-group <?=form_error('password') ? 'has-error' : null?>">
 							<label>Password *</label>
-							<input type="password" name="Password" class="form-control">
+							<input type="password" name="Password" value="<?=set_value('password')?>" class="form-control">
 							<?=form_error('password')?>
 						</div>
 						<div class="form-group <?=form_error('passconf') ? 'has-error' : null?>">
 							<label>Password Confirmation*</label>
-							<input type="password" name="passconf" class="form-control">
+							<input type="password" name="passconf" value="<?=set_value('passconf')?>" class="form-control">
 							<?=form_error('passconf')?>
 						</div>
-						<div class="form-group"> 
+						<div class="form-group">
 							<label>Address *</label>
-							<textarea name="address" class="form-control"></textarea>
+							<textarea name="address" class="form-control"><?=set_value('address')?></textarea>
 							<?=form_error('address')?>
 						</div>
 						<div class="form-group <?=form_error('level') ? 'has-error' : null?>">

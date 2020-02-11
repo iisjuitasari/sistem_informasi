@@ -54,3 +54,9 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['supplier'] = 'supplier'; 
 $route['Auth'] = 'login';
+
+$route['customer'] = 'pelanggan';
+$route['customer/add'] = 'pelanggan/add';
+$route['customer/process'] = 'pelanggan/process';
+$route['customer/edit/(:num)'] = 'pelanggan/edit/$1';
+$route['customer/del/(:num)'] = 'pelanggan/del/$1';

@@ -1,52 +1,52 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Supplier extends CI_Controller {
+class Pelanggan extends CI_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
 		check_not_login();
-		$this->load->model('supplier_m');
+		$this->load->model('customer_m');
 	}
 
 	public function index()
 	{
-		$data['row'] = $this->supplier_m->get();
+		$data['row'] = $this->customer_m->get();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('templates/topbar');
-		$this->load->view('supplier/supplier_data', $data);
+		$this->load->view('customer/customer_data', $data);
 		$this->load->view('templates/footer');
 	}
 
 	public function add() {
-		$supplier = new stdClass();
-		$supplier->supplier_id = null;
-		$supplier->name = null;
-		$supplier->phone = null;
-		$supplier->address = null;
-		$supplier->description = null;
+		$customer = new stdClass();
+		$customer->customer_id = null;
+		$customer->name = null;
+		$customer->gender = null;
+		$customer->phone = null;
+		$customer->address = null;
 		$data = array(
 			'page' => 'add',
-			'row' => $supplier
+			'row' => $customer
 		);
-		$this->load->view('supplier/supplier_form', $data);
+		$this->load->view('customer/customer_form', $data);
 	}
 
 	public function edit($id)
 	{
-		$query = $this->supplier_m->get($id);
+		$query = $this->customer_m->get($id);
 		if($query->num_rows() > 0) {
-			$supplier = $query->row();
+			$customer = $query->row();
 			$data = array(
 				'page' => 'edit',
-				'row' => $supplier
+				'row' => $customer
 			);
-			$this->load->view('supplier/supplier_form', $data);
+			$this->load->view('customer/customer_form', $data);
 		} else {
 			echo "<script>alert('Data tidak ditemukan');";
-			echo "window.location='".base_url('supplier')."';</script>";
+			echo "window.location='".base_url('customer')."';</script>";
 		}
 	}
 
@@ -54,27 +54,27 @@ class Supplier extends CI_Controller {
 	{
 		$post = $this->input->post(null, TRUE);
 		if(isset($_POST['add'])) {
-			$this->supplier_m->add($post);
+			$this->customer_m->add($post);
 		}
 
 		if($this->db->affected_rows() > 0) {
 			echo "<script>alert('Data berhasil disimpan');</script>";
 		} else if(isset($_POST['edit'])) {
-			$this->supplier_m->edit($post);
+			$this->customer_m->edit($post);
 		}
 
 		if($this->db->affected_rows() > 0) {
 			echo "<script>alert('Data berhasil disimpan');</script>";
 		}
-		echo "<script>window.location='".base_url('supplier')."';</script>";
+		echo "<script>window.location='".base_url('customer')."';</script>";
 	}
 
 	public function del($id)
 	{
-		$this->supplier_m->del($id);
+		$this->customer_m->del($id);
 		if($this->db->affected_rows() > 0) {
 			echo "<script>alert('Data berhasil dihapus');</script>";
 		}
-		echo "<script>window.location='".base_url('supplier')."';</script>";
+		echo "<script>window.location='".base_url('customer')."';</script>";
 	}
 }

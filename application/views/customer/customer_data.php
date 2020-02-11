@@ -1,11 +1,11 @@
 <div class="content-wrapper">
 <section class="content-header">
-  <h1>Suppliers
-    <small>Pemasok barang</small>
+  <h1>customers
+    <small>Pelanggan</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></li></a></i>
-    <li class="active">Suppliers</li>
+    <li class="active">customers</li>
   </ol>
 </section>
 
@@ -14,9 +14,9 @@
 
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title">Data Suppliers</h3>
+			<h3 class="box-title">Data customers</h3>
 			<div class="pull-right">
-				<a href="<?=base_url('supplier/add')?>" class="btn btn-primary btn-flat">
+				<a href="<?=base_url('customer/add')?>" class="btn btn-primary btn-flat">
 					<i class="fa fa-plus"></i> Create
 				</a>
 			</div>
@@ -25,11 +25,11 @@
 			<table class="table table-bordered table-striped" id="table1">
 				<thead>
 					<tr>
-						<th>#</th>
+						<th>No</th>
 						<th>Name</th>
+						<th>Gender</th>
 						<th>Phone</th>
 						<th>Address</th>
-						<th>Description</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -39,14 +39,14 @@
 					<tr>
 						<td style="width:5%;"><?=$no++?>.</td>
 						<td><?=$data->name?></td>
+						<td><?=$data->gender?></td>
 						<td><?=$data->phone?></td>
 						<td><?=$data->address?></td>
-						<td><?=$data->description?></td>
 						<td class="text-center" width="160px">
-							<a href="<?=base_url('supplier/edit/'.$data->supplier_id)?>" class="btn btn-primary btn-xs">
+							<a href="<?=base_url('customer/edit/'.$data->customer_id)?>" class="btn btn-primary btn-xs">
 								<i class="fa fa-pencil"></i> Update
 							</a>
-							<a href="<?=base_url('supplier/del/'.$data->supplier_id)?>" onclick="return confirm('Apakah anda yakin hapus data?')" class="btn btn-danger btn-xs">
+							<a href="<?=base_url('customer/del/'.$data->customer_id)?>" onclick="return confirm('Apakah anda yakin hapus data?')" class="btn btn-danger btn-xs">
 								<i class="fa fa-trash"></i> Delete
 							</a>
 					</td>
