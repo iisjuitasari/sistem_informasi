@@ -27,6 +27,7 @@
 				<thead>
 					<tr>
 						<th>#</th>
+						<th>Barcode</th>
 						<th>Name</th>
 						<th>Actions</th>
 					</tr>
@@ -36,6 +37,7 @@
 					foreach ($row->result() as $key => $data) { ?>
 					<tr>
 						<td style="width:5%;"><?=$no++?>.</td>
+						<td><?=$data->barcode?></td>
 						<td><?=$data->name?></td>
 						<td class="text-center" width="160px">
 							<a href="<?=base_url('item/edit/'.$data->item_id)?>" class="btn btn-primary btn-xs">
